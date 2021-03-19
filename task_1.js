@@ -1,14 +1,24 @@
-let resoult = abbreviation("internationalization")
+// 4. isSorted - Returns true or false, indicating whether the given array of numbers is sorted.
+// isSorted - возвращает true или false, указывая, отсортирован ли данный массив чисел.
 
-function abbreviation (x) {
-    if (x.length > 9) {
-    let first = x.substring(0,1)
-    let last = x.substring(x.length -1)
-    let number = (x.substring(1,x.length -1)).length   
+// isSorted([])                        // true
+// isSorted([-Infinity, -5, 0, 3, 9])  // true
+// isSorted([3, 9, -3, 10])            // false
 
-    return first+number+last
+let inArr = []
+
+console.log(isSorted(inArr))
+
+function isSorted(inputArr) {
+
+    for (let i = 0; i < inputArr.length; i++) {
+
+        if (i < inputArr.length) {
+
+            if (inputArr[i] > inputArr[i + 1]) {
+                return false
+            }
+        }
     }
-return x
+    return true
 }
-
-console.log(resoult)
